@@ -4,6 +4,8 @@ def length_word(word):
     for i in word:
         if i.isalpha():
             length += 1
+    if (operation == 'd') or (operation == 'decrypt'):
+        return -length
     return length
 
 
