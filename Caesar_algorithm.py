@@ -50,13 +50,14 @@ def caesar_cipher(text, alphabet_lower, alphabet_upper):
 def check_language(language):
     while language not in ['en', 'ru']:
         print("I don't know this language :(\nPlease, write any language from this list:")
-        print('2, 8, 10, 16')
+        language = input('en, ru')
+    return language
 
 
-message = input('Input text, that you want to encrypt/decrypt')
-chosen_lang = input('Input the language of your text')
-chosen_lang = chosen_lang
-operation = input('You want to encrypt or decrypt text? (e/d)')
+message = input('Input text, that you want to encrypt/decrypt:\n')
+chosen_lang = input('Input the language of your text:\n')
+chosen_lang = check_language(chosen_lang)
+operation = input('You want to encrypt or decrypt text? (e/d)\n')
 alpha_lower = get_alpha_lower(chosen_lang)
 alpha_upper = get_alpha_upper(chosen_lang)
 encrypted_message = caesar_cipher(message, alpha_lower, alpha_upper)
